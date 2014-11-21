@@ -2,7 +2,7 @@ require 'rubygems'
 require 'rubygems/package_task'
 require 'rdoc/task'
 
-require 'govuk_elements_rails/version'
+require './lib/govuk_elements_rails/version'
 
 task :default => :package do
 end
