@@ -43,6 +43,13 @@ For example here are all the requires possible at present:
     //= require bind
     //= require selection-buttons
 
+## Usage of GovukElementsFormBuilder
+
+To replace the default form builder with a version that generates GOV.UK Elements classed markup, set the following in
+config/application.rb:
+
+    config.use_govuk_elements_form_builder = true
+
 ## Alternate ways to reuse GOV.UK Elements
 
 There are other alternate ways to include GOV.UK Elements files in a Rails

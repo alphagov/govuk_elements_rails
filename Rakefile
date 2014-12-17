@@ -23,7 +23,12 @@ spec = Gem::Specification.new do |s|
   s.rdoc_options      = %w(--main README.md)
 
   # Add any extra files to include in the gem
-  files = [ %w(LICENCE README.md) + Dir.glob('vendor/assets/**/*/**/*') + Dir.glob('lib/**/*') ].flatten.select {|x| !File.directory?(x) }
+  files = [ %w(LICENCE README.md) +
+      Dir.glob('vendor/assets/**/*/**/*') +
+      Dir.glob('app/**/*/**/*') +
+      Dir.glob('config/**/*/**/*') +
+      Dir.glob('lib/**/*') ].flatten.select {|x| !File.directory?(x) }
+
   s.files             = files
   s.require_paths     = ['lib', 'vendor']
 
