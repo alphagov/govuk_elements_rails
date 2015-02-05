@@ -15,6 +15,19 @@ If you are installing from git, ensure you enable submodules like so:
 
     gem 'govuk_elements_rails', :git => "https://github.com/ministryofjustice/govuk_elements_rails.git", :submodules => true
 
+If you are working on the gem itself, clone and download submodules like this:
+
+    git clone https://github.com/ministryofjustice/govuk_elements_rails.git
+    cd govuk_elements_rails
+    git submodule init
+    git submodule update
+
+To add a javascript file to gem, create new symlink to govuk_elements file like this:
+
+    cd vendor/assets/javascripts/
+    ln -s ../../../govuk_elements/public/javascripts/application.js
+    ls -l
+
 ## Usage
 
 At the top of a Sass file in your Rails project you should use an `@import` rule
@@ -42,13 +55,6 @@ For example here are all the requires possible at present:
     //= require details.polyfill
     //= require bind
     //= require selection-buttons
-
-## Usage of GovukElementsFormBuilder
-
-To replace the default form builder with a version that generates GOV.UK Elements classed markup, set the following in
-config/application.rb:
-
-    config.use_govuk_elements_form_builder = true
 
 ## Alternate ways to reuse GOV.UK Elements
 
