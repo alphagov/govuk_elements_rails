@@ -1,0 +1,1 @@
+../../../govuk_elements/public/javascripts/application.js

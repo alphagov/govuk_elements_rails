@@ -1,5 +1,5 @@
 module GovUKElementsRails
   def self.elements_version
-    '0.2.1'
+    '0.2.2'
   end
 end
