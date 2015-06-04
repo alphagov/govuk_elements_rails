@@ -36,6 +36,16 @@ To update govuk_elements to last master commit:
     cd ..
     git commit -am "Update govuk_elements to last master commit."
 
+To update version number, edit version.rb, and repackage:
+
+    vi lib/govuk_elements_rails/version.rb
+    rake clean
+    rake package
+
+To tag and publish the gem to rubygems.org:
+
+    rake publish
+
 ## Usage
 
 At the top of a Sass file in your Rails project you should use an `@import` rule
