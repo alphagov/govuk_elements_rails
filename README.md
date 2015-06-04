@@ -28,6 +28,14 @@ To add a javascript file to gem, create new symlink to govuk_elements file like 
     ln -s ../../../govuk_elements/public/javascripts/application.js
     ls -l
 
+To update govuk_elements to last master commit:
+
+    cd govuk_elements
+    git checkout master
+    git pull
+    cd ..
+    git commit -am "Update govuk_elements to last master commit."
+
 ## Usage
 
 At the top of a Sass file in your Rails project you should use an `@import` rule
