@@ -2,17 +2,19 @@ require 'rubygems'
 require 'rubygems/package_task'
 require 'rdoc/task'
 
-require './lib/govuk_elements_rails/version'
-
 task :default => :package do
 end
 
-spec = Gem::Specification.new do |s|
+govuk_elements_version = `cd govuk_elements && git describe --tags`
+tag_sha=`cd govuk_elements && git rev-parse HEAD`
 
+change_log_url = "https://github.com/alphagov/govuk_elements/blob/#{tag_sha}/CHANGELOG.md"
+
+spec = Gem::Specification.new do |s|
   s.name              = 'govuk_elements_rails'
-  s.version           = GovUKElementsRails.elements_version
+  s.version           = govuk_elements_version.sub('v','')
   s.summary           = 'A gem wrapper around http://github.com/alphagov/govuk_elements that pulls stylesheet and javascript files into a Rails app.'
-  s.description       = "A gem wrapper around SHA #{(`git submodule status`).strip} that pulls stylesheet and javascript files into a Rails app."
+  s.description       = "A gem wrapper around govuk_elements #{(govuk_elements_version)} that pulls stylesheet and javascript files into a Rails app. Changelog: #{change_log_url}"
 
   s.author            = 'Rob McKinnon'
   s.email             = 'rob.mckinnon ~@nospam@~ digital.justice.gov.uk'
