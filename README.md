@@ -37,7 +37,6 @@ For example here are all the requires possible at present:
 
     // from govuk_elements gem
     //= require details.polyfill
-    //= require selection-buttons
 
 ## Alternate ways to reuse GOV.UK Elements
 
