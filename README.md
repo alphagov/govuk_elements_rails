@@ -60,19 +60,45 @@ If you are working on the gem itself, clone and download submodules like this:
     git submodule init
     git submodule update
 
+To update govuk_elements to a specific tag:
+
+    cd govuk_elements
+    git fetch origin
+    git describe --tags # shows current tag
+    git tag -l  # lists available tags
+    git checkout master
+    latest_tag=`git describe --abbrev=0 --tags`
+    git checkout $latest_tag # change to most recent tag
+    cd ..
+
+Check that the symlinks under `vendor/assets` still point to the govuk_elements files.
+
+To create the gem for local testing:
+
+    rake clean
+    rake gem
+
+
+If you're happy all's ok, you can commit:
+
+    cd govuk_elements
+    tag_sha=`git rev-parse HEAD`
+    commit_msg="Upgrade to govuk_elements $latest_tag"
+    commit_msg2="See govuk_elements $latest_tag changelog for details:"
+    commit_msg3="https://github.com/alphagov/govuk_elements/blob/$tag_sha/CHANGELOG.md"
+
+    echo $commit_msg
+    echo $commit_msg2
+    echo $commit_msg3
+    cd ..
+    git add govuk_elements
+    git commit -m "$commit_msg" -m "$commit_msg2" -m "$commit_msg3"
+
 To add a javascript file to gem, create new symlink to govuk_elements file like this:
 
     cd vendor/assets/javascripts/
     ln -s ../../../govuk_elements/public/javascripts/application.js
     ls -l
-
-To update govuk_elements to last master commit:
-
-    cd govuk_elements
-    git checkout master
-    git pull
-    cd ..
-    git commit -am "Update govuk_elements to last master commit."
 
 To update version number, edit version.rb, and repackage:
 
