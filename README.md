@@ -92,11 +92,14 @@ If you're happy all's ok, you can commit:
     git add govuk_elements
     git commit -m "$commit_msg" -m "$commit_msg2" -m "$commit_msg3"
 
-To add a javascript file to gem, create new symlink to govuk_elements file like this:
+To add a javascript file to gem, create new symlink to govuk_elements file like in this example:
 
     cd vendor/assets/javascripts/
-    ln -s ../../../govuk_elements/public/javascripts/application.js
     ls -l
+    ln -s ../../../govuk_elements/public/javascripts/vendor/details.polyfill.js .
+    ls -l
+    cd ../../..
+    git add vendor/javascripts/details.polyfill.js
 
 To update version number, edit version.rb, and repackage:
 
