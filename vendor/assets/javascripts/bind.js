@@ -1,1 +1,0 @@
-../../../govuk_elements/govuk/public/javascripts/vendor/polyfills/bind.js
