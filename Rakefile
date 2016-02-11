@@ -34,8 +34,9 @@ spec = Gem::Specification.new do |s|
   s.files             = files
   s.require_paths     = ['lib', 'vendor']
 
-  s.add_dependency 'rails', '~> 4.1', '>= 4.1.0'
-  s.add_dependency 'sass', '~> 3.2', '>= 3.2.0'
+  s.add_runtime_dependency 'rails', '~> 4.1', '>= 4.1.0'
+  s.add_runtime_dependency 'sass', '~> 3.2', '>= 3.2.0'
+  s.add_runtime_dependency 'govuk_frontend_toolkit', '~> 4.6.1', '>= 4.6.1'
 end
 
 # This task actually builds the gem. We also regenerate a static
