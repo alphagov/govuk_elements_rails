@@ -14,9 +14,11 @@ files will be available to the asset pipeline.
 
 ## Usage
 
+For detailed information on usage see the
+[govuk_elements README](https://github.com/alphagov/govuk_elements#govuk-elements).
+
 At the top of a Sass file in your Rails project you should use an `@import` rule
-to include the file for the mixins you require. For example here are all the
-imports possible:
+to include the file for the mixins you require. For example here are possible imports:
 
     // From GDS's alphagov/govuk_frontend_toolkit
     @import 'colours'
@@ -58,11 +60,16 @@ For example here are all the requires possible at present:
     // from govuk_elements gem
     //= require details.polyfill
 
+For further detailed information on usage see the
+[govuk_elements README](https://github.com/alphagov/govuk_elements#govuk-elements).
+
 ## Alternate ways to reuse GOV.UK Elements
 
 There are other alternate ways to include GOV.UK Elements implementations in a Rails
-project, for example via [NPM and Mojular](https://github.com/mojular/govuk-elements).
-Feel free to use an alternate approach if it's more appropriate for your team.
+project, for example via [NPM](https://www.npmjs.com/package/govuk-elements-sass)
+or [Mojular](https://github.com/mojular/govuk-elements).
+
+Feel free to use an alternate approach when it's more appropriate for your team.
 
 ### Making updates to the gem itself
 
@@ -95,7 +102,6 @@ To create the gem for local testing:
 
     rake clean
     rake gem
-
 
 If you're happy all's ok, you can commit:
 
