@@ -12,6 +12,29 @@ Just include `govuk_elements_rails` in your Rails application `Gemfile`:
 It automatically attaches itself to your asset path so the static/SCSS
 files will be available to the asset pipeline.
 
+### Dependency on govuk_frontend_toolkit
+
+The gem has a dependency on the
+[govuk_frontend_toolkit gem](https://rubygems.org/gems/govuk_frontend_toolkit).
+So `govuk_frontend_toolkit` will be installed on `bundle install` if it is not
+installed already.
+
+### Dependency on govuk_template base HTML styles
+
+The gem assumes you have `govuk_template` base HTML styles in your SASS.
+But the [govuk_template gem](https://rubygems.org/gems/govuk_template) is not a
+dependency. Either require `govuk_template` in your `Gemfile`:
+
+    gem 'govuk_template'
+
+or include the following in a Sass file, see Usage section for details:
+
+    // Base (unclassed HTML elements)
+    // These are predefined by govuk_template
+    // If you're not using govuk_template, uncomment the line below.
+    // HTML elements, set by the GOV.UK template
+    @import 'elements/base'
+
 ## Usage
 
 For detailed information on usage see the
@@ -37,6 +60,13 @@ to include the file for the mixins you require. For example here are possible im
     // From GDS's alphagov/govuk_elements
     @import 'elements/helpers'
     @import 'elements/reset'
+
+    // Base (unclassed HTML elements)
+    // These are predefined by govuk_template
+    // If you're not using govuk_template, uncomment the line below.
+    // HTML elements, set by the GOV.UK template
+    // @import 'elements/base'
+
     @import 'elements/layout'
     @import 'elements/elements-typography'
     @import 'elements/buttons'
@@ -71,7 +101,7 @@ or [Mojular](https://github.com/mojular/govuk-elements).
 
 Feel free to use an alternate approach when it's more appropriate for your team.
 
-### Making updates to the gem itself
+## Making updates to the gem itself
 
 You only need to look at this section if you want to update the gem with changes
 from the govuk-elements repo.
