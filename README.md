@@ -18,18 +18,38 @@ At the top of a Sass file in your Rails project you should use an `@import` rule
 to include the file for the mixins you require. For example here are all the
 imports possible:
 
-    @import 'elements/helpers';
-    @import 'elements/reset';
-    @import 'elements/elements-typography';
-    @import 'elements/layout';
+    // From GDS's alphagov/govuk_frontend_toolkit
+    @import 'colours'
+    @import 'font_stack'
+    @import 'measurements'
+    @import 'conditionals'
+    @import 'device-pixels'
+    @import 'grid_layout'
+    @import 'typography'
+    @import 'shims'
 
-    @import 'elements/forms';
-    @import 'elements/tables';
-    @import 'elements/buttons';
-    @import 'elements/details';
-    @import 'elements/lists';
-    @import 'elements/panels';
-    @import "elements/icons";
+    @import 'design-patterns/alpha-beta'
+    @import 'design-patterns/buttons'
+    @import 'design-patterns/breadcrumbs'
+
+    // From GDS's alphagov/govuk_elements
+    @import 'elements/helpers'
+    @import 'elements/reset'
+    @import 'elements/layout'
+    @import 'elements/elements-typography'
+    @import 'elements/buttons'
+    // @import 'elements/icons'
+    @import 'elements/lists'
+    // @import 'elements/tables'
+    @import 'elements/details'
+    @import 'elements/panels'
+    @import 'elements/forms'
+    @import 'elements/forms/form-block-labels'
+    @import 'elements/forms/form-date'
+    @import 'elements/forms/form-validation'
+    @import 'elements/breadcrumbs'
+    @import 'elements/phase-banner'
+    @import 'elements/components'
 
 In the `app/assets/javascripts/application.js` file in your Rails project use
 `require` rule to include the files for the javascript enhancements you require.
@@ -40,9 +60,9 @@ For example here are all the requires possible at present:
 
 ## Alternate ways to reuse GOV.UK Elements
 
-There are other alternate ways to include GOV.UK Elements files in a Rails
-project, for example via `Bower`. Feel free to use an alternate approach if it
-is more appropriate for your team.
+There are other alternate ways to include GOV.UK Elements implementations in a Rails
+project, for example via [NPM and Mojular](https://github.com/mojular/govuk-elements).
+Feel free to use an alternate approach if it's more appropriate for your team.
 
 ### Making updates to the gem itself
 
