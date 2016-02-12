@@ -40,8 +40,13 @@ or include the following in a Sass file, see Usage section for details:
 For detailed information on usage see the
 [govuk_elements README](https://github.com/alphagov/govuk_elements#govuk-elements).
 
+### Stylesheets usage
+
 At the top of a Sass file in your Rails project you should use an `@import` rule
-to include the file for the mixins you require. For example here are possible imports:
+to include the file for the mixins you require.
+
+For example here are possible imports, remember to add semicolons to the end of
+lines if you are using the `scss` format instead of `sass`:
 
     // From GDS's alphagov/govuk_frontend_toolkit
     @import 'colours'
@@ -83,6 +88,11 @@ to include the file for the mixins you require. For example here are possible im
     @import 'elements/phase-banner'
     @import 'elements/components'
 
+For further detailed information on usage see the
+[govuk_elements README](https://github.com/alphagov/govuk_elements#govuk-elements).
+
+### Javascript usage
+
 In the `app/assets/javascripts/application.js` file in your Rails project use
 `require` rule to include the files for the javascript enhancements you require.
 For example here are all the requires possible at present:
@@ -90,8 +100,25 @@ For example here are all the requires possible at present:
     // from govuk_elements gem
     //= require details.polyfill
 
-For further detailed information on usage see the
-[govuk_elements README](https://github.com/alphagov/govuk_elements#govuk-elements).
+### Javascript from govuk_frontend_toolkit
+
+In the `app/assets/javascripts/application.js` file in your Rails project use
+`require` rule to include javascript from the `govuk_frontend_toolkit` gem. For
+example:
+
+    // from govuk_frontend_toolkit gem
+    //= require vendor/polyfills/bind
+    //= require govuk/selection-buttons
+
+To include all of the govuk javascript, require `govuk_toolkit`, i.e.
+
+    // from govuk_frontend_toolkit gem
+    //= require vendor/polyfills/bind
+    //= require govuk_toolkit
+
+See the
+[govuk_frontend_toolkit documentation](https://github.com/alphagov/govuk_frontend_toolkit#documentation)
+for details of what javascript is available.
 
 ## Alternate ways to reuse GOV.UK Elements
 
