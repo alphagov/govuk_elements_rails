@@ -1,1 +1,0 @@
-../../../govuk_elements/govuk/public/javascripts/govuk/selection-buttons.js
