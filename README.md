@@ -145,14 +145,14 @@ Feel free to use an alternate approach when it's more appropriate for your team.
 ## Making updates to the gem itself
 
 You only need to look at this section if you want to update the gem with changes
-from the govuk-elements repo.
+from the `govuk-elements` repo.
 
 If you just want to use the gem in your Rails application, don't follow these steps.
 
 If you are working on the gem itself, clone and download submodules like this:
 
 ```sh
-git clone https://github.com/ministryofjustice/govuk_elements_rails.git
+git clone git@github.com:ministryofjustice/govuk_elements_rails.git
 cd govuk_elements_rails
 git submodule init
 git submodule update
@@ -167,37 +167,19 @@ git describe --tags # shows current tag
 git tag -l  # lists available tags
 git checkout master
 latest_tag=`git describe --abbrev=0 --tags`
+echo $latest_tag
 git checkout $latest_tag # change to most recent tag
 cd ..
 ```
 
-Check that the symlinks under `vendor/assets` still point to the govuk_elements files.
-
-To create the gem for local testing:
+Check that the symlinks under `vendor/assets` still point to the `govuk_elements` files.
 
 ```sh
-rake clean
-rake gem
+ls -lat vendor/assets/javascripts/
+ls -lat vendor/assets/stylesheets/
 ```
 
-If you're happy all's ok, you can commit:
-
-```sh
-cd govuk_elements
-tag_sha=`git rev-parse HEAD`
-commit_msg="Upgrade to govuk_elements $latest_tag"
-commit_msg2="See govuk_elements $latest_tag changelog for details:"
-commit_msg3="https://github.com/alphagov/govuk_elements/blob/$tag_sha/CHANGELOG.md"
-
-echo $commit_msg
-echo $commit_msg2
-echo $commit_msg3
-cd ..
-git add govuk_elements
-git commit -m "$commit_msg" -m "$commit_msg2" -m "$commit_msg3"
-```
-
-To add a javascript file to gem, create new symlink to govuk_elements file like in this example:
+To add a javascript file to gem, create new symlink to `govuk_elements` file, like in this example:
 
 ```sh
 cd vendor/assets/javascripts/
@@ -208,12 +190,47 @@ cd ../../..
 git add vendor/javascripts/details.polyfill.js
 ```
 
-To update version number, edit version.rb, and repackage:
+To create the gem for local testing:
 
 ```sh
-vi lib/govuk_elements_rails/version.rb
 rake clean
-rake package
+rake gemspec
+rake gem
+```
+
+If you're happy all's ok, you can create a branch and commit:
+
+```sh
+cd govuk_elements
+tag_sha=`git rev-parse HEAD`
+echo $tag_sha
+cd ..
+
+branch_name="update-$latest_tag"
+echo $branch_name
+git branch $branch_name
+git checkout $branch_name
+git push -u origin $branch_name
+
+git add govuk_elements_rails.gemspec
+git add govuk_elements
+
+commit_msg="Upgrade to govuk_elements $latest_tag"
+commit_msg2="See govuk_elements $latest_tag changelog for details:"
+commit_msg3="https://github.com/alphagov/govuk_elements/blob/$tag_sha/CHANGELOG.md"
+
+echo $commit_msg
+echo $commit_msg2
+echo $commit_msg3
+
+git commit -m "$commit_msg" -m "$commit_msg2" -m "$commit_msg3"
+git push
+```
+
+Create a new pull request for the release:
+
+```sh
+open "https://github.com/ministryofjustice/govuk_elements_rails/compare/master...$branch_name"
 ```
 
 To tag and publish the gem to rubygems.org:
@@ -226,7 +243,7 @@ If you are installing from git for testing, ensure you enable submodules in your
 require like so:
 
 ```ruby
-gem 'govuk_elements_rails', :git => "https://github.com/ministryofjustice/govuk_elements_rails.git", :submodules => true
+gem 'govuk_elements_rails', git: "https://github.com/ministryofjustice/govuk_elements_rails.git", submodules: true
 ```
 
 ## Feedback
