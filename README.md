@@ -137,8 +137,7 @@ for details of what javascript is available.
 ## Alternate ways to reuse GOV.UK Elements
 
 There are other alternate ways to include GOV.UK Elements implementations in a Rails
-project, for example via [NPM](https://www.npmjs.com/package/govuk-elements-sass)
-or [Mojular](https://github.com/mojular/govuk-elements).
+project, for example via [NPM](https://www.npmjs.com/package/govuk-elements-sass).
 
 Feel free to use an alternate approach when it's more appropriate for your team.
 
@@ -152,7 +151,7 @@ If you just want to use the gem in your Rails application, don't follow these st
 If you are working on the gem itself, clone and download submodules like this:
 
 ```sh
-git clone git@github.com:ministryofjustice/govuk_elements_rails.git
+git clone git@github.com:alphagov/govuk_elements_rails.git
 cd govuk_elements_rails
 git submodule init
 git submodule update
@@ -230,7 +229,7 @@ git push
 Create a new pull request for the release:
 
 ```sh
-open "https://github.com/ministryofjustice/govuk_elements_rails/compare/master...$branch_name"
+open "https://github.com/alphagov/govuk_elements_rails/compare/master...$branch_name"
 ```
 
 To tag and publish the gem to rubygems.org:
@@ -243,9 +242,9 @@ If you are installing from git for testing, ensure you enable submodules in your
 require like so:
 
 ```ruby
-gem 'govuk_elements_rails', git: "https://github.com/ministryofjustice/govuk_elements_rails.git", submodules: true
+gem 'govuk_elements_rails', git: "https://github.com/alphagov/govuk_elements_rails.git", submodules: true
 ```
 
 ## Feedback
 
-Please provide feedback via [GitHub issues](https://github.com/ministryofjustice/govuk_elements_rails/issues).
+Please provide feedback via [GitHub issues](https://github.com/alphagov/govuk_elements_rails/issues).

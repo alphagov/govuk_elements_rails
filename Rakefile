@@ -16,9 +16,9 @@ spec = Gem::Specification.new do |s|
   s.summary           = 'A gem wrapper around http://github.com/alphagov/govuk_elements that pulls stylesheet and javascript files into a Rails app.'
   s.description       = "A gem wrapper around govuk_elements #{(govuk_elements_version)} that pulls stylesheet and javascript files into a Rails app. Changelog: #{change_log_url}"
 
-  s.author            = 'Rob McKinnon'
-  s.email             = 'rob.mckinnon ~@nospam@~ digital.justice.gov.uk'
-  s.homepage          = 'https://github.com/ministryofjustice/govuk_elements_rails'
+  s.authors           = ['Rob McKinnon', 'Government Digital Service']
+  s.email             = 'robin.whittleton@digital.cabinet-office.gov.uk'
+  s.homepage          = 'https://github.com/alphagov/govuk_elements_rails'
 
   s.has_rdoc          = true
   s.extra_rdoc_files  = %w(README.md)
@@ -34,9 +34,9 @@ spec = Gem::Specification.new do |s|
   s.files             = files
   s.require_paths     = ['lib', 'vendor']
 
-  s.add_runtime_dependency 'rails', '~> 4.1', '>= 4.1.0'
-  s.add_runtime_dependency 'sass', '~> 3.2', '>= 3.2.0'
-  s.add_runtime_dependency 'govuk_frontend_toolkit', '~> 4.6.1', '>= 4.6.1'
+  s.add_runtime_dependency 'rails', '>= 4.1.0'
+  s.add_runtime_dependency 'sass', '>= 3.2.0'
+  s.add_runtime_dependency 'govuk_frontend_toolkit', '>= 4.10.0'
 end
 
 # This task actually builds the gem. We also regenerate a static
