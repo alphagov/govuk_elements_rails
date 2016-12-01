@@ -36,7 +36,7 @@ spec = Gem::Specification.new do |s|
 
   s.add_runtime_dependency 'rails', '>= 4.1.0'
   s.add_runtime_dependency 'sass', '>= 3.2.0'
-  s.add_runtime_dependency 'govuk_frontend_toolkit', '>= 5.0.0'
+  s.add_runtime_dependency 'govuk_frontend_toolkit', '>= 5.0.2'
 end
 
 # This task actually builds the gem. We also regenerate a static
