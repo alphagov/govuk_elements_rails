@@ -12,7 +12,7 @@ change_log_url = "https://github.com/alphagov/govuk_elements/blob/#{tag_sha}/CHA
 
 spec = Gem::Specification.new do |s|
   s.name              = 'govuk_elements_rails'
-  s.version           = govuk_elements_version.sub('v','')
+  s.version           = govuk_elements_version.sub(/^v(.*?)-.*$/, '\1')
   s.summary           = 'A gem wrapper around http://github.com/alphagov/govuk_elements that pulls stylesheet and javascript files into a Rails app.'
   s.description       = "A gem wrapper around govuk_elements #{(govuk_elements_version)} that pulls stylesheet and javascript files into a Rails app. Changelog: #{change_log_url}"
 
