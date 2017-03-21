@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Rob McKinnon", "Government Digital Service"]
-  s.date = "2017-03-16"
+  s.date = "2017-03-21"
   s.description = "A gem wrapper around govuk_elements v3.0.0\n that pulls stylesheet and javascript files into a Rails app. Changelog: https://github.com/alphagov/govuk_elements/blob/7b3b47dc20827311aad103445e26aa51ebe82941\n/CHANGELOG.md"
   s.email = "robin.whittleton@digital.cabinet-office.gov.uk"
   s.extra_rdoc_files = ["README.md"]
