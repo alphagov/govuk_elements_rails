@@ -1,1 +1,1 @@
-../../../govuk_elements/public/javascripts/govuk/details.polyfill.js
+../../../govuk_elements/assets/javascripts/govuk/details.polyfill.js
