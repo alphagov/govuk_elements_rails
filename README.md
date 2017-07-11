@@ -183,7 +183,7 @@ To add a javascript file to gem, create new symlink to `govuk_elements` file, li
 ```sh
 cd vendor/assets/javascripts/
 ls -l
-ln -s ../../../govuk_elements/public/javascripts/vendor/details.polyfill.js .
+ln -s ../../../govuk_elements/assets/javascripts/govuk/details.polyfill.js .
 ls -l
 cd ../../..
 git add vendor/javascripts/details.polyfill.js
