@@ -16,8 +16,8 @@ spec = Gem::Specification.new do |s|
   s.summary           = 'A gem wrapper around http://github.com/alphagov/govuk_elements that pulls stylesheet and javascript files into a Rails app.'
   s.description       = "A gem wrapper around govuk_elements #{(govuk_elements_version)} that pulls stylesheet and javascript files into a Rails app. Changelog: #{change_log_url}"
 
-  s.authors           = ['Rob McKinnon', 'Government Digital Service']
-  s.email             = 'robin.whittleton@digital.cabinet-office.gov.uk'
+  s.authors           = ['GOV.UK Design System Team (Government Digital Service)']
+  s.email             = 'design-system-developers@digital.cabinet-office.gov.uk'
   s.homepage          = 'https://github.com/alphagov/govuk_elements_rails'
 
   s.has_rdoc          = true
