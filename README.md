@@ -200,11 +200,6 @@ rake gem
 If you're happy all's ok, you can create a branch and commit:
 
 ```sh
-cd govuk_elements
-tag_sha=`git rev-parse HEAD`
-echo $tag_sha
-cd ..
-
 branch_name="update-$latest_tag"
 echo $branch_name
 git branch $branch_name
@@ -216,7 +211,7 @@ git add govuk_elements
 
 commit_msg="Upgrade to govuk_elements $latest_tag"
 commit_msg2="See govuk_elements $latest_tag changelog for details:"
-commit_msg3="https://github.com/alphagov/govuk_elements/blob/$tag_sha/CHANGELOG.md"
+commit_msg3="https://github.com/alphagov/govuk_elements/blob/$latest_tag/packages/govuk-elements-sass/CHANGELOG.md"
 
 echo $commit_msg
 echo $commit_msg2
