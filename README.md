@@ -48,14 +48,14 @@ For detailed information on usage see the
 
 ### Stylesheets usage
 
-At the top of a Sass file in your Rails project you should use an `@import` rule
-to include the file for the mixins you require.
+At the top of your projects main stylesheet you should use `@import` rules to
+include the files that you require.
 
-For example here are possible imports, remember to add semicolons to the end of
-lines if you are using the `scss` format instead of `sass`:
+If you are using the `scss` format instead of `sass` you will need to add
+semicolons and reformat the comments.
 
 ```sass
-// From GDS's alphagov/govuk_frontend_toolkit
+// GOV.UK Frontend Toolkit (alphagov/govuk_frontend_toolkit)
 @import 'colours'
 @import 'font_stack'
 @import 'measurements'
@@ -69,31 +69,38 @@ lines if you are using the `scss` format instead of `sass`:
 @import 'design-patterns/buttons'
 @import 'design-patterns/breadcrumbs'
 
-// From GDS's alphagov/govuk_elements
-@import 'elements/helpers'
-@import 'elements/reset'
+// GOV.UK elements (alphagov/govuk_elements)
+
+// Helper functions and classes
+@import "elements/helpers"
+
+// Generic (normalize/reset.css)
+@import "elements/reset"
 
 // Base (unclassed HTML elements)
 // These are predefined by govuk_template
 // If you're not using govuk_template, uncomment the line below.
-// HTML elements, set by the GOV.UK template
-// @import 'elements/base'
+// @import "elements/govuk-template-base"
 
-@import 'elements/layout'
-@import 'elements/elements-typography'
-@import 'elements/buttons'
-// @import 'elements/icons'
-@import 'elements/lists'
-// @import 'elements/tables'
-@import 'elements/details'
-@import 'elements/panels'
-@import 'elements/forms'
-@import 'elements/forms/form-block-labels'
-@import 'elements/forms/form-date'
-@import 'elements/forms/form-validation'
-@import 'elements/breadcrumbs'
-@import 'elements/phase-banner'
-@import 'elements/components'
+// Main content container. Grid layout - rows and column widths
+@import "elements/layout"
+
+// Components (chunks of UI)
+@import "elements/elements-typography"
+@import "elements/buttons"
+@import "elements/icons"
+@import "elements/lists"
+@import "elements/tables"
+@import "elements/details"
+@import "elements/panels"
+@import "elements/forms"
+@import "elements/forms/form-multiple-choice"
+@import "elements/forms/form-date"
+@import "elements/forms/form-validation"
+@import "elements/breadcrumbs"
+@import "elements/phase-banner"
+@import "elements/components"
+@import "elements/shame"
 ```
 
 For further detailed information on usage see the
