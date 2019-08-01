@@ -1,3 +1,12 @@
+The GOV.UK Design System launched on 22 June 2018
+===============
+
+GOV.UK Elements has now been replaced by the GOV.UK Design System. Elements will remain available in case you are currently using it, but is no longer maintained. The Government Digital Service will only carry out major bug fixes and security patches.
+
+The GOV.UK Design System will be updated to ensure the things it contains meet level AA of WCAG 2.1, but Elements will not. [Read more about accessibility of the GOV.UK Design System](https://design-system.service.gov.uk/accessibility/).
+
+---
+
 # GOV.UK Elements Rails gem
 
 A gem wrapper around [govuk_elements](http://github.com/alphagov/govuk_elements)
